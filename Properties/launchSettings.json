@@ -12,7 +12,7 @@
     "ReleaseRetention": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "swagger",
+      "launchUrl": "api/releases",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
