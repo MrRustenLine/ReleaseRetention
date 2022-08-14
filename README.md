@@ -1,4 +1,4 @@
-# Release Retention Coding Exercise
+# Release Retention API
 
 ## Welcome to DevOps Deploy
 
@@ -22,9 +22,9 @@ The team at DevOps Deploy has looked into the problems reported by their long-ti
 
 So DevOps Deploy has decided to delete old releases, and is calling this cool new feature Release Retention.
 
-## The Task
+## The API
 
-Your task is to implement the Release Retention rule which determines which releases to keep. Given a set of **projects**, **environments**, **releases** and **deployments**: determine the releases that should be kept.
+The API implements the Release Retention rule which determines which releases to keep. Given a set of **projects**, **environments**, **releases** and **deployments**: determine the releases that should be kept.
 
 The Release Retention rule:
 > [**Projects**](#project) can have zero or more [**releases**](#release), which can be released to an [**environment**](#environment) by creating a [**deployment**](#deployment). A **release** can have zero or more **deployments** for a **project** and **environment**.  
@@ -32,7 +32,7 @@ The Release Retention rule:
 > For each **project**/**environment** combination, keep `n` **releases** that have most recently been deployed, where `n` is the number of releases to keep. 
 > note: A **release** is considered to have "been deployed" if the release _has one or more_ **deployments**.
 
-Using your most comfortable languages, tools, and frameworks, implement the Release Retention rule. Your implementation should:
+The Release Retention rule must meet the following requirements:
 - Be reusable and testable
 - Have tests, as you would for production code
 - Not have a UI, CLI, or database
@@ -40,13 +40,11 @@ Using your most comfortable languages, tools, and frameworks, implement the Rele
 - Return the releases that should be kept
 - Log why a release should be kept
 
-You will find JSON files containing sets of projects, environments, releases and deployments that represent what shape the input data might be in.
-
-The solution should be to a standard you are proud of, ready for [the interview](#the-interview).
+The supplied JSON files contain sets of projects, environments, releases and deployments that represent what shape the input data might be in.
 
 ### Sample Test Cases
 
-To help clarify the behaviour of the Release Retention, here are some sample test cases and their expected results (these are **not** based on the supplied sample data). Use these as a guide to understanding the problem domain and adjust your test suite as you feel necessary for your implementation:
+To help clarify the behaviour of the Release Retention, here are some sample test cases and their expected results (these are **not** based on the supplied sample data). They could be used as a guide to understanding the problem domain and be necessary for a successful implementation:
 
 #### Test Case: 1 Release, Keep 1
 
@@ -85,18 +83,6 @@ To help clarify the behaviour of the Release Retention, here are some sample tes
 - `Release-1` kept because it was the most recently deployed to `Environment-2`
 - `Release-2` kept because it was the most recently deployed to `Environment-1`
 
-### Questions and Assumptions
-
-While you are completing the exercise, you may encounter some questions or impediments. Rather than being blocked, please make assumptions based on what you think is the best approach. Also, make a note of these assumptions to help as we explore the solution together.
-
-### Ideas and Improvements
-
-While you are completing the exercise you may come up with some ideas for enhancements to the Release Retention feature. Make a note of them, and come prepared to have a brief discussion with your interview partners about them.
-
-## The Interview
-
-During the interview, we will explore the implementation you've developed to solve the problem. We'll then introduce a new scenario to consider, and extend your solution to cater for it.
-
 ## DevOps Deploy Concepts
 
 #### Project
@@ -114,3 +100,4 @@ An environment is a collection of the things that get deployed to. It would usua
 #### Deployment
 
 A deployment is the way a release of a project ends up in an environment. If we created release 1.0.0 of the Pet Shop project, we could deploy it to the Staging environment. We'll check the deployment and make sure everything is ok, and then create a new deployment of the same release to the Production environment. Every time a release of a project is sent to an environment, a new deployment is created.
+
