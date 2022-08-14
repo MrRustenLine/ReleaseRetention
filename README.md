@@ -103,4 +103,5 @@ An environment is a collection of the things that get deployed to. It would usua
 A deployment is the way a release of a project ends up in an environment. If we created release 1.0.0 of the Pet Shop project, we could deploy it to the Staging environment. We'll check the deployment and make sure everything is ok, and then create a new deployment of the same release to the Production environment. Every time a release of a project is sent to an environment, a new deployment is created.
 
 ## Architecture
+### Logical architecture
 ![Architecture var 1](https://user-images.githubusercontent.com/22570977/184522136-d815ba61-64d5-47ce-95b6-1db631b75342.png)
