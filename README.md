@@ -103,7 +103,6 @@ A deployment is the way a release of a project ends up in an environment. If we 
 
 ## Architecture
 
-<img src="[/assets/img/MarineGEO_logo.png](https://app.whiteboard.microsoft.com/me/whiteboards/0cf88899-ceb4-4833-bb6d-a3c9ab2ad9e9)" style="height: 100px; width:100px;"/>
 
 
 
