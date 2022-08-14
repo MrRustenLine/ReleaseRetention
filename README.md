@@ -103,6 +103,6 @@ A deployment is the way a release of a project ends up in an environment. If we 
 
 ## Architecture
 
-
+``![image text](https://user-images.githubusercontent.com/22570977/184521970-70a98988-bee1-4614-9ab1-1c5bd24b0afa.png)``
 
 
