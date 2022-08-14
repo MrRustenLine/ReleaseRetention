@@ -104,4 +104,4 @@ A deployment is the way a release of a project ends up in an environment. If we 
 
 ## Architecture
 ### Logical architecture
-![Architecture var 1]()
+![Architecture var 1](https://github.com/MrRustenLine/ReleaseRetention/blob/master/ReleaseRetentionAPILogical%20Architecture.png)
