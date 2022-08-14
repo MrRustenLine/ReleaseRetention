@@ -101,3 +101,9 @@ An environment is a collection of the things that get deployed to. It would usua
 
 A deployment is the way a release of a project ends up in an environment. If we created release 1.0.0 of the Pet Shop project, we could deploy it to the Staging environment. We'll check the deployment and make sure everything is ok, and then create a new deployment of the same release to the Production environment. Every time a release of a project is sent to an environment, a new deployment is created.
 
+## Architecture
+
+<img src="[/assets/img/MarineGEO_logo.png](https://app.whiteboard.microsoft.com/me/whiteboards/0cf88899-ceb4-4833-bb6d-a3c9ab2ad9e9)" style="height: 100px; width:100px;"/>
+
+
+
