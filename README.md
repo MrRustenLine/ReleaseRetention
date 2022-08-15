@@ -109,5 +109,5 @@ A deployment is the way a release of a project ends up in an environment. If we 
 ### Physical architecture
 ![Architecture var 1](https://github.com/MrRustenLine/ReleaseRetention/blob/b1473b5444689b5dbfa032f1cce284b73a2edccf/Release%20Retention%20API%20physical%20architecture%20-%20Clean%20Architecture.png)
 
-The physical architecture implements the Clean Architecture pattern. Please read a beautiful article by Robert C Martin: https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+The physical architecture implements the Clean Architecture pattern. Please read a beautiful article by Robert C. Martin: https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
 
