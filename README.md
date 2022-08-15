@@ -107,4 +107,4 @@ A deployment is the way a release of a project ends up in an environment. If we 
 ![Architecture var 1](https://github.com/MrRustenLine/ReleaseRetention/blob/master/ReleaseRetentionAPILogical%20Architecture.png)
 
 ### Physical architecture
-![Architecture var 1]()
+![Architecture var 1](https://github.com/MrRustenLine/ReleaseRetention/blob/b1473b5444689b5dbfa032f1cce284b73a2edccf/Release%20Retention%20API%20physical%20architecture%20-%20Clean%20Architecture.png)
