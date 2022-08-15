@@ -1,4 +1,4 @@
-﻿namespace ReleaseRetention.Models
+﻿namespace ReleaseRetention.Entities
 {
     public class Environment
     {
