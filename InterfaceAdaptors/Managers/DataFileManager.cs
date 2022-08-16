@@ -1,11 +1,16 @@
-﻿namespace ReleaseRetention.InterfaceAdaptors.Managers
+﻿using Microsoft.Extensions.Configuration;
+using ReleaseRetention.Entities;
+
+namespace ReleaseRetention.InterfaceAdaptors.Managers
 {
-    public class DataFileManager: IDataFileManager
+    public static class DataFileManager
     {
-        public string DeploymentsJSON { get; set; }
-        public string EnvironmentsJSON { get; set; }
-        public string ProjectsJSON { get; set; }
-        public string ReleasesJSON { get; set; }
+        public static List<Release>Releases { get; set; }
+        public static List<Deployment> Deployments { get; set; }
+        //public string DeploymentsJSON { get; set; }
+        //public string EnvironmentsJSON { get; set; }
+        //public string ProjectsJSON { get; set; }
+        //public string ReleasesJSON { get; set; }
 
     }
 }

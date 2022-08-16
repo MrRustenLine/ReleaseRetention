@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ReleaseRetention.InterfaceAdaptors.Managers;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -27,7 +28,7 @@ namespace ReleaseRetention.Interface_Adaptors.Controllers
         [HttpGet("{number}")]
         public async Task<ActionResult<IEnumerable<Release>>> GetReleases(int number)
         {
-            BusinessManager mgr = new BusinessManager();
+            BusinessManager mgr = new BusinessManager(DataFileManager.Releases, DataFileManager.Deployments);
 
             //return releases to be retained
             return mgr.RetainReleases(number);

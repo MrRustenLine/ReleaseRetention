@@ -14,6 +14,7 @@ namespace ReleaseRetention
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
+            var key1 = app.Configuration.GetValue<string>("DeploymentsJSON");
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
