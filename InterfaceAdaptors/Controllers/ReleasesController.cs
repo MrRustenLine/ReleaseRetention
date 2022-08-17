@@ -17,18 +17,11 @@ namespace ReleaseRetention.Interface_Adaptors.Controllers
     [ApiController]
     public class ReleasesController : ControllerBase
     {
-        //// GET: api/<ReleasesController>
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
         // GET api/<ReleasesController>/5
         [HttpGet("{number}")]
         public async Task<ActionResult<IEnumerable<Release>>> GetReleases(int number)
         {
-            BusinessManager mgr = new BusinessManager(DataFileManager.Releases, DataFileManager.Deployments);
+            BusinessManager mgr = new BusinessManager(DataFileManager.GetReleases(), DataFileManager.GetDeployments());
 
             //return releases to be retained
             return mgr.RetainReleases(number);

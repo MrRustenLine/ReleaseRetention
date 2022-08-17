@@ -16,8 +16,7 @@ namespace ReleaseRetention.UseCases
 
         public List<Release>RetainReleases(int number)
         {
-            List<Release> releases = new List<Release>();
-            return releases;
+            return _releases;
         }
     }
 }
