@@ -1,6 +1,6 @@
 ﻿namespace ReleaseRetention.InterfaceAdaptors.Managers
 {
-    public class DataFilesSettings
+    public class DataFileSettings
     {
         public string DeploymentsJSON { get; set; }
         public string EnvironmentsJSON { get; set; }

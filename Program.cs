@@ -16,8 +16,8 @@ namespace ReleaseRetention
 
             var app = builder.Build();
 
-            var dataFilesSettings = new DataFilesSettings();
-            builder.Configuration.GetSection(nameof(DataFilesSettings)).Bind(dataFilesSettings);
+            var dataFilesSettings = new DataFileSettings();
+            builder.Configuration.GetSection(nameof(DataFileSettings)).Bind(dataFilesSettings);
 
             DataFileManager.ReleasesFile = dataFilesSettings.ReleasesJSON;
             DataFileManager.DeploymentsFile = dataFilesSettings.DeploymentsJSON;

@@ -15,7 +15,7 @@ namespace ReleaseRetention.Interface_Adaptors.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ReleasesController : ControllerBase
+    public class ReleaseController : ControllerBase
     {
         // GET api/<ReleasesController>/5
         [HttpGet("{number}")]
