@@ -10,17 +10,32 @@ namespace ReleaseRetention.InterfaceAdaptors.Managers
         public static string DeploymentsFile { get; set; }
         //public string EnvironmentsJSON { get; set; }
         //public string ProjectsJSON { get; set; }
+        private static List<Release> releases;
+        private static List<Deployment> deployments;
 
-        //public static List<Release>Releases { get; set; }
-        //public static List<Deployment> Deployments { get; set; }
-        public static void ReadConfig()
-        {
-
+        public static List<Release>Releases { 
+            get
+            {
+                return releases == null ? null : releases;
+            }
         }
-        public static List<Release> GetReleases()
+
+        public static List<Deployment> Deployments
+        {
+            get
+            {
+                return deployments == null ? null : deployments;
+            }
+        }
+        //public static List<Deployment> Deployments { get; set; }
+
+        public static void LoadData()
         {
             string jsonString = Read(ReleasesFile);
-            return JsonConvert.DeserializeObject<List<Release>>(jsonString);
+            releases = JsonConvert.DeserializeObject<List<Release>>(jsonString);
+
+            jsonString = Read(ReleasesFile);
+            deployments = JsonConvert.DeserializeObject<List<Deployment>>(jsonString);
         }
 
         public static List<Deployment> GetDeployments()

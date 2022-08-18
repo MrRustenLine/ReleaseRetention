@@ -21,7 +21,7 @@ namespace ReleaseRetention.Interface_Adaptors.Controllers
         [HttpGet("{number}")]
         public async Task<ActionResult<IEnumerable<Release>>> GetReleases(int number)
         {
-            BusinessManager mgr = new BusinessManager(DataFileManager.GetReleases(), DataFileManager.GetDeployments());
+            BusinessManager mgr = new BusinessManager(DataFileManager.Releases, DataFileManager.Deployments);
 
             //return releases to be retained
             return mgr.RetainReleases(number);

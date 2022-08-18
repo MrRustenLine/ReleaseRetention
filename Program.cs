@@ -21,6 +21,7 @@ namespace ReleaseRetention
 
             DataFileManager.ReleasesFile = dataFilesSettings.ReleasesJSON;
             DataFileManager.DeploymentsFile = dataFilesSettings.DeploymentsJSON;
+            DataFileManager.LoadData();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
