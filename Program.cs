@@ -16,11 +16,14 @@ namespace ReleaseRetention
 
             var app = builder.Build();
 
-            var dataFilesSettings = new DataFileSettings();
-            builder.Configuration.GetSection(nameof(DataFileSettings)).Bind(dataFilesSettings);
+            var dataFileSettings = new DataFileSettings();
+            builder.Configuration.GetSection(nameof(DataFileSettings)).Bind(dataFileSettings);
 
-            DataFileManager.ReleasesFile = dataFilesSettings.ReleasesJSON;
-            DataFileManager.DeploymentsFile = dataFilesSettings.DeploymentsJSON;
+            DataFileManager.ReleasesFile = dataFileSettings.ReleasesJSON;
+            DataFileManager.DeploymentsFile = dataFileSettings.DeploymentsJSON;
+            DataFileManager.EnvironmentsFile = dataFileSettings.EnvironmentsJSON;
+            DataFileManager.ProjectsFile = dataFileSettings.ProjectsJSON;
+
             DataFileManager.LoadData();
 
             // Configure the HTTP request pipeline.

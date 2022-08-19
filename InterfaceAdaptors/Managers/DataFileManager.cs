@@ -8,15 +8,34 @@ namespace ReleaseRetention.InterfaceAdaptors.Managers
     {
         public static string ReleasesFile { get; set; }
         public static string DeploymentsFile { get; set; }
-        //public string EnvironmentsJSON { get; set; }
-        //public string ProjectsJSON { get; set; }
+        public static string EnvironmentsFile { get; set; }
+        public static string ProjectsFile { get; set; }
+
         private static List<Release> releases;
         private static List<Deployment> deployments;
+        private static List<ReleaseRetention.Entities.Environment> environments;
+        private static List<Project> projects;
 
         public static List<Release>Releases { 
             get
             {
                 return releases == null ? null : releases;
+            }
+        }
+
+        public static List<ReleaseRetention.Entities.Environment> Environments
+        {
+            get
+            {
+                return environments == null ? null : environments;
+            }
+        }
+
+        public static List<Project> Projects
+        {
+            get
+            {
+                return projects == null ? null : projects;
             }
         }
 
@@ -27,23 +46,22 @@ namespace ReleaseRetention.InterfaceAdaptors.Managers
                 return deployments == null ? null : deployments;
             }
         }
-        //public static List<Deployment> Deployments { get; set; }
 
         public static void LoadData()
         {
             string jsonString = Read(ReleasesFile);
             releases = JsonConvert.DeserializeObject<List<Release>>(jsonString);
 
-            jsonString = Read(ReleasesFile);
+            jsonString = Read(DeploymentsFile);
             deployments = JsonConvert.DeserializeObject<List<Deployment>>(jsonString);
-        }
 
-        public static List<Deployment> GetDeployments()
-        {
-            string jsonString = Read(DeploymentsFile);
-            return JsonConvert.DeserializeObject<List<Deployment>>(jsonString);
-        }
+            jsonString = Read(EnvironmentsFile);
+            environments = JsonConvert.DeserializeObject<List<ReleaseRetention.Entities.Environment>>(jsonString);
 
+            jsonString = Read(ProjectsFile);
+            projects = JsonConvert.DeserializeObject<List<Project>>(jsonString);
+
+        }
         public static string Read(string fileName)
         {
             //fileName = full path including extension
