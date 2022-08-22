@@ -21,32 +21,46 @@ namespace ReleaseRetention.UseCases
             _projects = projects;
         }
 
-        public List<Release>RetainReleases(int number)
+        public List<Release>RetainReleases(int nReleases)
         {
-            var ReleasesDeployments = from r in _releases
-                                      join d in _deployments on r.Id equals d.ReleaseId
-                                      orderby r.Id, d.DeployedAt descending
-                                      select new
-                                      {
-                                          r.Id,
-                                          r.ProjectId,
-                                          r.Version,
-                                          r.Created,
-                                          d.DeployedAt
-                                      };
-            //var list = (from t in ctn.Items
-            //            where t.DeliverySelection == true && t.Delivery.SentForDelivery == null
-            //            orderby t.Delivery.SubmissionDate
-            //            select t).Take(5);
-            //foreach (var releasesResult in ReleasesDeployments)
-            //{
-            //    OrdersCountByUser ocbu = new OrdersCountByUser();
-            //    ocbu.name = orderGroup.Key;
-            //    ocbu.count = orderGroup.Count();
-            //    ordersCountByUser.Add(ocbu);
-            //}
-
-            return _releases;
+            var ds = from r in _releases
+                      join d in _deployments on r.Id equals d.ReleaseId
+                      join p in _projects on r.ProjectId equals p.Id
+                      join e in _environments on d.EnvironmentId equals e.Id
+                      select new
+                      {
+                          ReleaseId = r.Id,
+                          r.ProjectId,
+                          r.Version,
+                          r.Created,
+                          DeploymentId = d.Id,
+                          d.EnvironmentId,
+                          d.DeployedAt,
+                          EnvironmentName = e.Name,
+                          ProjectName = p.Name,
+                      };
+            List<Release> results = new List<Release>();
+            foreach(Project project in _projects)
+            {
+                foreach(ReleaseRetention.Entities.Environment environment in _environments)
+                {
+                    var shortList = (from r in ds
+                                where string.Equals(r.ProjectId, project.Id) && string.Equals(r.EnvironmentId, environment.Id)
+                                orderby r.DeployedAt descending
+                                select r).Take(nReleases);
+                    foreach(var sLResult in shortList)
+                    {
+                        Release release = new Release();
+                        release.ProjectId = project.Id;
+                        release.Id = sLResult.ReleaseId;
+                        release.Version = sLResult.Version;
+                        release.Created = sLResult.Created;
+                        results.Add(release);
+                        //"Log why a release should be kept"
+                    }
+                }
+            }
+            return results;
         }
     }
 }

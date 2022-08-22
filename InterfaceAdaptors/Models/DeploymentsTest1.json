@@ -4,5 +4,17 @@
     "ReleaseId": "Release-1",
     "EnvironmentId": "Environment-1",
     "DeployedAt": "2000-01-01T10:00:00"
+  },
+  {
+    "Id": "Deployment-2",
+    "ReleaseId": "Release-1",
+    "EnvironmentId": "Environment-1",
+    "DeployedAt": "2000-01-01T08:00:00"
+  },
+  {
+    "Id": "Deployment-3",
+    "ReleaseId": "Release-2",
+    "EnvironmentId": "Environment-1",
+    "DeployedAt": "2000-01-01T09:00:00"
   }
 ]
