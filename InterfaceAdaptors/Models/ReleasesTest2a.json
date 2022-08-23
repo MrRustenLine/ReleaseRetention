@@ -1,0 +1,32 @@
+[
+  {
+    "Id": "Release-1",
+    "ProjectId": "Project-1",
+    "Version": "1.0.0",
+    "Created": "2000-01-01T08:00:00"
+  },
+  {
+    "Id": "Release-2",
+    "ProjectId": "Project-1",
+    "Version": "1.0.1",
+    "Created": "2000-01-01T09:00:00"
+  },
+  {
+    "Id": "Release-3",
+    "ProjectId": "Project-1",
+    "Version": "1.0.0",
+    "Created": "2000-01-01T05:00:00"
+  },
+  {
+    "Id": "Release-4",
+    "ProjectId": "Project-1",
+    "Version": "1.0.0",
+    "Created": "2000-01-01T06:00:00"
+  },
+  {
+    "Id": "Release-5",
+    "ProjectId": "Project-1",
+    "Version": "1.0.0",
+    "Created": "2000-01-01T07:00:00"
+  }
+]

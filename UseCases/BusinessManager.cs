@@ -29,7 +29,7 @@ namespace ReleaseRetention.UseCases
                       join e in _environments on d.EnvironmentId equals e.Id
                       select new
                       {
-                          ReleaseId = r.Id,
+                          d.ReleaseId,
                           r.ProjectId,
                           r.Version,
                           r.Created,
@@ -48,15 +48,15 @@ namespace ReleaseRetention.UseCases
                                 where string.Equals(r.ProjectId, project.Id) && string.Equals(r.EnvironmentId, environment.Id)
                                 orderby r.DeployedAt descending
                                 select r).Take(nReleases);
-                    foreach(var sLResult in shortList)
+                    foreach(var r in shortList)
                     {
                         Release release = new Release();
                         release.ProjectId = project.Id;
-                        release.Id = sLResult.ReleaseId;
-                        release.Version = sLResult.Version;
-                        release.Created = sLResult.Created;
+                        release.Id = r.ReleaseId;
+                        release.Version = r.Version;
+                        release.Created = r.Created;
                         results.Add(release);
-                        //"Log why a release should be kept"
+                        //"Log why a release should be kept" `Release-1` kept because it was the most recently deployed to `Environment-2`
                     }
                 }
             }
