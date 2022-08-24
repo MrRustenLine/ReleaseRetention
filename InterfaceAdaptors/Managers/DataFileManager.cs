@@ -71,7 +71,7 @@ namespace ReleaseRetention.InterfaceAdaptors.Managers
             }
             else
             {
-                throw new Exception(fileName + " does not exist.");
+                throw new ArgumentException(fileName + " does not exist.");
             }
         }
     }
